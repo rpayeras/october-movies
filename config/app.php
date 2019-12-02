@@ -41,7 +41,7 @@ return [
     |
     */
 
-    'url' => 'http://localhost',
+    'url' => 'http://localhost/oct',
 
     /*
     |--------------------------------------------------------------------------
@@ -101,7 +101,7 @@ return [
     |
     */
 
-    'key' => 'base64:86xHmnkz5u7g/1m2QpYwRGR1+aD+CxB+sZpGzurIChw=',
+    'key' => '0GHR632FhyQC2akPaUVWqX7pbBPodVWg',
 
     'cipher' => 'AES-256-CBC',
 

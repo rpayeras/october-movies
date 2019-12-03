@@ -26,7 +26,7 @@ return [
     |
     */
 
-    'default' => 'sqlite',
+    'default' => 'mysql',
 
     /*
     |--------------------------------------------------------------------------
@@ -54,11 +54,11 @@ return [
 
         'mysql' => [
             'driver'    => 'mysql',
-            'host'      => '192.168.10.10',
+            'host'      => 'localhost',
             'port'      => 3306,
-            'database'  => 'homestead',
-            'username'  => 'homestead',
-            'password'  => 'secret',
+            'database'  => 'oct',
+            'username'  => 'root',
+            'password'  => 'root',
             'charset'   => 'utf8mb4',
             'collation' => 'utf8mb4_unicode_ci',
             'prefix'    => '',

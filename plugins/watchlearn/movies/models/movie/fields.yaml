@@ -1,0 +1,21 @@
+fields:
+    name:
+        label: 'Movie title'
+        span: auto
+        type: text
+    description:
+        label: Description
+        size: large
+        span: full
+        type: richeditor
+    year:
+        label: Year
+        span: auto
+        type: text
+    slug:
+        label: Slug
+        span: auto
+        preset:
+            field: name
+            type: slug
+        type: text

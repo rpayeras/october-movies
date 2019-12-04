@@ -1,5 +1,5 @@
 title = "movie"
-url = "/movie/:slug"
+url = "/movies/movie/:slug"
 layout = "default"
 is_hidden = 0
 
@@ -14,11 +14,34 @@ notFoundMessage = "Record not found"
 {% set displayColumn = builderDetails.displayColumn %}
 {% set notFoundMessage = builderDetails.notFoundMessage %}
 
-{% if record %}
-    <h2>{{ record.name }}</h2>
-    <h4>{{ record.year }}</h4>
-    <h3>Description</h3>
-    {{record.name}}
-{% else %}
-    {{ notFoundMessage }}
-{% endif %}
+<main class="container">
+    {% if record %}
+        <h2>{{ record.name }}</h2>
+
+        <img src="{{ record.poster.thumb(200, 200, {'mode':'crop'}) }}" alt="{{record.name}} poster">
+        <h4>{{ record.year }}</h4>
+        <h3>Description</h3>
+        {{record.name}}
+
+        <h3>Actors</h3>
+        <ul>
+            {% for actor in record.actors %}
+                <li>{{ actor.actor_name }}</li>
+            {% endfor %}
+        </ul>
+
+        <h3>Gallery</h3>
+        <ul class="gallery clearfix">
+            {% for item in record.movie_gallery %}
+                <img src="{{ item.thumb(200, 200, {'mode':'crop'}) }}" alt="{{item.name}} poster">
+            {% endfor %}
+        </ul>
+
+        <h3>Genres</h3>
+        {% for genre in record.genres %}
+            <a href="/oct/genres/{{ genre.slug }}">{{ genre.genre_title }}</a>
+        {% endfor %}
+    {% else %}
+        {{ notFoundMessage }}
+    {% endif %}
+</main>
